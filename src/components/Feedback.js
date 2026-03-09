@@ -12,26 +12,36 @@ export default function Feedback(){
         {id:'4', name:'Michael', job:'Patient', img:img4, comment:'Amazing team and amazing treatment from the best doctor in the world',},
     ]
     return(
-        <div className="py-16 px-6 md:px-12 lg:px-16 xl:px-20 gap-40 bg-first-color">
-            <div className='flex flex-col gap-y-6'>
-                <h2 className='text-head-color text-4xl font-bold'>Read feedback about our Services and wonderful team!</h2>
-                <span className='text-p-color'>We take care of our patients just like a family member . Read the testimonials from our patients. </span>
+        /* تم استبدال gap-40 بـ flex flex-col و gap-12 لتكون المسافات منطقية */
+        <div className="py-16 px-6 md:px-12 lg:px-20 bg-first-color flex flex-col gap-12">
+            
+            {/* الجزء الخاص بالعناوين */}
+            <div className='flex flex-col gap-y-4 max-w-2xl'>
+                <h2 className='text-head-color text-3xl md:text-4xl font-bold leading-tight'>
+                    Read feedback about our Services and wonderful team!
+                </h2>
+                <p className='text-p-color'>
+                    We take care of our patients just like a family member. Read the testimonials from our patients.
+                </p>
             </div>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6  mt-6'>
+
+            {/* الجزء الخاص بالـ Cards */}
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
                 {feedbacks.map((feedback)=>{
                     return(
-                        <div key={feedback.id} className='bg-white rounded-2xl py-12 px-8 cursor-pointer hover:scale-105 duration-200'>
+                        <div key={feedback.id} className='bg-white rounded-2xl p-8 cursor-pointer hover:scale-105 duration-200 shadow-sm flex flex-col justify-between'>
                             <div>
-                                <img src={comment} alt="comment" />
-                                <h3 className='text-p-color mt-3'>{feedback.comment}</h3>
+                                <img src={comment} alt="comment" className="w-8 h-8" />
+                                <p className='text-p-color mt-4 text-sm leading-relaxed'>
+                                    "{feedback.comment}"
+                                </p>
                             </div>
-                            <div className='flex items-center gap-2 mt-10'>
+                            
+                            <div className='flex items-center gap-3 mt-8'>
+                                <img className='w-12 h-12 rounded-full object-cover' src={feedback.img} alt={feedback.name} />
                                 <div>
-                                    <img className='w-12 h-12 rounded-full' src={feedback.img} alt="Michael" />
-                                </div>
-                                <div>
-                                    <h5 className='font-semibold'>{feedback.name}</h5>
-                                    <span className='text-p-color mt-3'>{feedback.job}</span>
+                                    <h5 className='font-bold text-sm'>{feedback.name}</h5>
+                                    <span className='text-xs text-gray-500'>{feedback.job}</span>
                                 </div>
                             </div>
                         </div>
@@ -42,3 +52,4 @@ export default function Feedback(){
     )
 
 }
+
