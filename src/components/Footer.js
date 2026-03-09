@@ -29,13 +29,13 @@ export default function Footer(){
                     <h3 className="text-white text-xl font-bold">MuhirisDoctor</h3>
                     <Link to={'/#'} className="flex flex-col font-semibold text-p-color hover:text-btn-color duration-200">The ultimate destination for all of your medical needs</Link>
                     <div className="flex gap-2 mt-4">
-                        <a href={'https://www.facebook.com/yahyasaad24'} target="_blank" className="w-10 h-10 p-3 flex justify-center items-center rounded-full bg-[#183b5c] hover:bg-text-color duration-200 hover:scale-105">
+                        <a href={'https://www.facebook.com/yahyasaad24'} className="w-10 h-10 p-3 flex justify-center items-center rounded-full bg-[#183b5c] hover:bg-text-color duration-200 hover:scale-105">
                             <FontAwesomeIcon size={'lg'} icon={faFacebookF} />
                         </a>
                         <a href="mailto:yahyasaad2040@gmail.com" className="w-10 h-10 p-3 flex justify-center items-center rounded-full bg-[#183b5c] hover:bg-text-color duration-200 hover:scale-105">
                             <FontAwesomeIcon size={'lg'} icon={faEnvelope} />
                         </a>
-                        <a href="https://wa.me/201127471188" target="_blank" className="w-10 h-10 p-3 flex justify-center items-center rounded-full bg-[#183b5c] hover:bg-text-color duration-200 hover:scale-105">
+                        <a href="https://wa.me/201127471188" className="w-10 h-10 p-3 flex justify-center items-center rounded-full bg-[#183b5c] hover:bg-text-color duration-200 hover:scale-105">
                             <FontAwesomeIcon size={'lg'} icon={faWhatsapp} />
                         </a>
                     </div>
@@ -64,4 +64,5 @@ export default function Footer(){
             </div>
         </>
     )
+
 }
