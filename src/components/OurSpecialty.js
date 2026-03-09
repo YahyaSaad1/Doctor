@@ -21,27 +21,33 @@ export default function OurSpecialty(){
         {title: 'Medical Aid', desc:'Get consultation form our Emergency Medical Aid Team', img:specialty9},
     ]
     return(
-        <div className="items-center py-16 px-6 md:px-12 lg:px-16 xl:px-20 bg-first-color">
-            <div className="text-center flex flex-col gap-y-4">
-                <h2 className='text-head-color text-4xl font-bold'>Our Specialty</h2>
-                <span className='text-p-color'>We provide the world class services with the | best medical team!</span>
+       <div className="flex flex-col items-center py-16 px-6 md:px-12 lg:px-20 bg-first-color">
+            <div className="text-center flex flex-col gap-y-4 max-w-2xl">
+                <h2 className='text-head-color text-3xl md:text-4xl font-bold'>Our Specialty</h2>
+                <p className='text-p-color'>We provide the world class services with the best medical team!</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mt-16 gap-8 md:gap-12 items-center">
-            {items.map((item)=>{
-                return(
-                    <div className='flex flex-col group cursor-pointer items-center text-center gap-y-5 min-h-80 p-16 rounded-2xl bg-white hover:bg-btn-color hover:scale-105 duration-200'>
-                        <div className='bg-first-color rounded-xl p-5 flex justify-center items-center h-20 w-20'>
-                            <img src={item.img} alt="img" />
+            {/* تم تحسين الـ Grid والـ Gap */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-16 gap-8 w-full max-w-7xl">
+                {items.map((item, index)=>{
+                    return(
+                        <div key={index} className='flex flex-col group cursor-pointer items-center text-center gap-y-6 p-8 md:p-10 rounded-2xl bg-white hover:bg-btn-color hover:scale-105 duration-300 shadow-sm transition-all'>
+                            {/* حاوية الأيقونة */}
+                            <div className='bg-first-color rounded-xl p-4 flex justify-center items-center h-20 w-20 group-hover:bg-white/20 transition-colors'>
+                                <img src={item.img} alt={item.title} className="w-12 h-12 object-contain" />
+                            </div>
+
+                            <div className='flex flex-col gap-y-3'>
+                                <h4 className='font-bold text-xl md:text-2xl group-hover:text-white transition-colors'>{item.title}</h4>
+                                <p className='text-p-color text-sm md:text-base group-hover:text-white/90 transition-colors'>
+                                    {item.desc}
+                                </p>
+                            </div>
                         </div>
-                        <div className='flex flex-col gap-y-2'>
-                            <h4 className='font-bold text-2xl'>{item.title}</h4>
-                            <span className='text-p-color text-md group-hover:text-white'>{item.desc}</span>
-                        </div>
-                    </div>
-                )
-            })}
+                    )
+                })}
             </div>
         </div>
     )
+
 }
