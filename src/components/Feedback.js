@@ -21,7 +21,7 @@ export default function Feedback(){
                     Read feedback about our Services and wonderful team!
                 </h2>
                 <p className='text-p-color'>
-                    We take care of our patienccccccccts just like a family member. Read the testimonials from our patients.
+                    We take care of our patients just like a family member. Read the testimonials from our patients.
                 </p>
             </div>
 
