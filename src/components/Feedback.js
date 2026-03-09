@@ -1,4 +1,3 @@
-import image1 from '../Images/image 1.png'
 import comment from '../Images/comment.png'
 import img1 from '../Images/img1.png'
 import img2 from '../Images/img2.png'
@@ -41,4 +40,5 @@ export default function Feedback(){
             </div>
         </div>
     )
+
 }
